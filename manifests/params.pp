@@ -39,6 +39,13 @@ class icingaweb2::params {
       $gettext_package_name = 'gettext-tools'
     } # Suse
 
+    'gentoo': {
+      $conf_user            = 'nginx'
+      $conf_group           = 'icingaweb2'
+      $schema_dir           = '/usr/share/icingaweb2/etc/schema'
+      $gettext_package_name = 'gettext'
+    } # Gentoo
+
     default: {
       fail("Your plattform ${::facts['os']['family']} is not supported, yet.")
     }
